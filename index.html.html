@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guía Completa: HTML Semántico - UNESR</title>
+    <style>
+        /* EL SECRETO PARA QUE EL FOOTER NO TAPE NADA */
+        html, body {
+            height: 100%;
+            margin: 0;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            line-height: 1.8;
+            background-color: #f4f0fa;
+            color: #2d2d2d;
+        }
+
+        header {
+            flex-shrink: 0;
+            background: linear-gradient(135deg, #d4a5ff 0%, #8a2be2 100%);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .logo-unesr { max-width: 110px; margin-bottom: 15px; }
+
+        .authors-card {
+            margin-top: 15px;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 10px 25px;
+            border-radius: 50px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            display: inline-block;
+            font-weight: bold;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 25px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            background: rgba(0,0,0,0.1);
+            padding: 8px 15px;
+            border-radius: 5px;
+        }
+
+        /* CONTENIDO PRINCIPAL */
+        main {
+            flex: 1 0 auto; 
+            max-width: 1000px;
+            margin: 30px auto;
+            padding: 40px;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+
+        section { margin-bottom: 50px; }
+
+        h2 { 
+            color: #8a2be2; 
+            border-left: 6px solid #d4a5ff; 
+            padding-left: 15px; 
+            margin-bottom: 20px;
+        }
+
+        .img-box { text-align: center; margin: 25px 0; }
+        .img-box img {
+            width: 100%;
+            max-width: 850px;
+            border-radius: 10px;
+            border: 2px solid #f0e6ff;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        article {
+            background: #fcfaff;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #d4a5ff;
+            margin: 15px 0;
+        }
+
+        /* FOOTER CORREGIDO */
+        footer {
+            flex-shrink: 0;
+            background: #2d2d2d;
+            color: white;
+            text-align: center;
+            padding: 30px;
+            border-top: 5px solid #8a2be2;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <img src="UNESR.avif" alt="Logo UNESR" class="logo-unesr">
+        <h1>UNESR - Núcleo Palo Verde</h1>
+        <div class="authors-card">
+            Autores: Anabel Holguín, Carlos Ortega y Marianny Henríquez
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#header-sec">Header</a></li>
+                <li><a href="#nav-sec">Nav</a></li>
+                <li><a href="#main-sec">Main</a></li>
+                <li><a href="#section-sec">Section</a></li>
+                <li><a href="#footer-sec">Footer</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="header-sec">
+            <h2>1. Profundizando en el <code>&lt;header&gt;</code></h2>
+            <p>Es el punto de entrada. Su importancia radica en que contiene los elementos de identidad visual. En términos administrativos, es la "cara" del documento oficial.</p>
+            <div class="img-box">
+                <img src="Header1.png" alt="Ejemplo Header">
+            </div>
+        </section>
+
+        <section id="nav-sec">
+            <h2>2. El elemento <code>&lt;nav&gt;</code></h2>
+            <p>Define el bloque de navegación. Es vital para que el usuario no se pierda en la estructura y Google entienda la jerarquía.</p>
+            <div class="img-box">
+                <img src="Nav.png" alt="Ejemplo Nav">
+            </div>
+        </section>
+
+        <section id="main-sec">
+            <h2>3. El contenido <code>&lt;main&gt;</code></h2>
+            <p>Aquí es donde vive la información principal y única de la página. Ayuda al SEO y a la accesibilidad.</p>
+            <div class="img-box">
+                <img src="Main.png" alt="Ejemplo Main">
+            </div>
+        </section>
+
+        <section id="section-sec">
+            <h2>4. Segmentación con <code>&lt;section&gt;</code></h2>
+            <p>Divide temas largos en trozos digeribles. Cada sección debe tener su propio título descriptivo.</p>
+            <div class="img-box">
+                <img src="Section1.png" alt="Ejemplo Section">
+            </div>
+            <article>
+                <h4>Nota Académica</h4>
+                <p>En manuales administrativos, cada sección representaría un capítulo o una norma específica del reglamento.</p>
+            </article>
+        </section>
+
+        <section id="footer-sec">
+            <h2>5. El cierre formal: <code>&lt;footer&gt;</code></h2>
+            <p>Es donde colocamos la información de contacto, redes y créditos finales.</p>
+            <div class="img-box">
+                <img src="Footer.png" alt="Ejemplo Footer">
+            </div>
+        </section>
+
+        <section id="responsive">
+            <h2>Diseño Responsive (Tailwind)</h2>
+            <p>Para que la página se vea bien en celulares, usamos los prefijos:</p>
+            <ul>
+                <li><code>sm:</code> Celulares (640px)</li>
+                <li><code>md:</code> Tablets (768px)</li>
+                <li><code>lg:</code> Laptops (1024px)</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p><strong>Universidad Nacional Experimental Simón Rodríguez</strong></p>
+        <p>Curso: HTML Básico y Semántico | 2026</p>
+        <p style="color: #d4a5ff;">Autores: Holguín, Ortega & Henríquez</p>
+    </footer>
+
+</body>
+</html>
